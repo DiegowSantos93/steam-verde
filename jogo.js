@@ -26,3 +26,22 @@ const criar = () => {
         console.log('Dados inválidos.')
     }
 }
+
+const listar = () => {
+    if (jogos.length == 0){
+        console.log("Nenhum jogo cadastrado.")
+    } else {
+        jogos.forEach((jogo, indice) => {
+            console.log(`
+            ${indice + 1}. 
+            Nome: ${jogo.nome}
+            Ano de Lançamento: ${jogo.anoLancamento}
+            Duração: ${jogo.duracao}
+            Preço: ${jogo.preco}
+            Estúdio: ${jogo.estudio}
+            Sequência: ${jogo.sequencia}
+            `)
+        })
+    }
+}
+
