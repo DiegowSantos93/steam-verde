@@ -89,3 +89,5 @@ const deletar = () => {
     console.log('Falha na remoção.');
    }
 };
+
+module.exports = {criar, atualizar, listar, deletar}
