@@ -12,7 +12,7 @@ const modelo = () => {
     if (
         nome != "" &&
         paisOrigem != "" &&
-        anoCriacao >= 1962 && anoLancamento <= 2024
+        anoCriacao >= 1962 && anoCriacao <= 2024
     ) {
         return {nome, paisOrigem, anoCriacao, }
     } else {
