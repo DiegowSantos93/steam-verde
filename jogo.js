@@ -2,16 +2,23 @@ const prompt = require ("prompt-sync")();
 
 const jogos = [];
 
-const validarIndice = indice => validarIndice(indice)
+const atualizacaoValidacao = indice => {
+    if(jogos.length == 1 && indice == 0){
+        return false
+    }
+    return true
+}
 
-const modelo = () => {
+const validarIndice = indice => indice >= 0 && indice < jogos.length;
+
+const modelo = (indice = -1) => {
     const nome = prompt('Nome do jogo: ');
     const anoLancamento = prompt('Ano de lançamento: ');
     const duracao = prompt('Duração média em horas: ');
     const preco = prompt('Preço: ');
     const estudio = prompt('Estúdio do jogo: ');
     let sequencia = -1
-    if (listar()){
+    if (listar() && atualizacaoValidacao(indice)){
         sequencia = prompt('Qual a sequência do jogo? Digite 0 se não houver sequência. ') - 1;
     };
     
@@ -64,7 +71,7 @@ const atualizar = () => {
     }
 
     const indice = prompt('Qual jogo deseja atualizar? ') - 1;
-    const jogo = modelo()
+    const jogo = modelo(indice)
 
     if (jogo != undefined && validarIndice(indice)){
         jogos[indice] = jogo

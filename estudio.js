@@ -2,7 +2,7 @@ const prompt = require ("prompt-sync")();
 
 const estudios = [];
 
-const validarIndice = indice => validarIndice(indice)
+const validarIndice = indice => indice >= 0 && indice < jogos.length;
 
 const modelo = () => {
     const nome = prompt('Nome do estudio: ');
